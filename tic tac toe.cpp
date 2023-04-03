@@ -7,6 +7,20 @@ char giliran = 'X', konfirmasi, isi_papan[3][3] =   {{'1', '2', '3'}, {'4', '5',
 int gerakan, count = 0, kolom, baris, angka = 0;
 bool run = true, cek = false, bermain = true;
 
+/* Function non-return type */
+void reset(){
+    giliran = 'X', count = 0, cek = false, run = true;
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 3; j++)
+        {
+            isi_papan[i][j] = array_angka[angka];
+            angka++;
+        }
+    }
+    angka = 0;
+}
+
 class tic_tac_toe {
 public:
     /* Method non-return type */
