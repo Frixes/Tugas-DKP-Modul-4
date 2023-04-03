@@ -80,6 +80,45 @@ bool pengecekan(){
     return false;
 }
 
+/* Function non-return type */
+void game(){
+    while (run)
+    {
+        print_papan();
+        cout << "Giliran " << giliran << endl;
+        cout << "Silakan masukkan angka yang anda inginkan" << endl;
+        cin >> gerakan;
+        cout << endl;
+        method.kolom_baris();
+        if (isi_papan[baris][kolom] != 'X' && isi_papan[baris][kolom] != 'O') {
+            isi_papan[baris][kolom] = giliran;
+            count++;
+            cout << "Pemain " << giliran << " memasukkan ke kotak " << gerakan << endl << endl;}
+        else {
+            cout << "Kotak sudah terisi, silakan pilih kotak lain" << endl;
+            continue;
+        }
+        
+        if (count >= 5){
+            cek = pengecekan();
+            if (cek) {
+                print_papan();
+                cout << "Selamat " << giliran << " menang!!!" << endl;
+                run = false;
+            }
+        }
+        
+        if (giliran == 'X'){   
+            giliran = 'O';} 
+        else {
+            giliran = 'X';}
+        
+        if (count == 9){
+            cout << "Permainan seri!" << endl;
+            run = false;}
+    }
+}
+
 int main()
 {
 
