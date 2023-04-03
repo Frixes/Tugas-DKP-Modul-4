@@ -60,6 +60,6 @@ tic_tac_toe method;
 
 int main()
 {
-    
+    cout << endl;
     return 0;
 }
