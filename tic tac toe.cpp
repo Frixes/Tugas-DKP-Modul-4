@@ -58,8 +58,30 @@ public:
 };
 tic_tac_toe method;
 
+void print_papan(){
+    cout << isi_papan[0][0] << " | " << isi_papan[0][1] << " | " << isi_papan[0][2] << endl;
+    cout << "--+---+--" << endl;
+    cout << isi_papan[1][0] << " | " << isi_papan[1][1] << " | " << isi_papan[1][2] << endl;
+    cout << "--+---+--" << endl;
+    cout << isi_papan[2][0] << " | " << isi_papan[2][1] << " | " << isi_papan[2][2] << endl << endl;
+}
+
+/* Funtion return type tanpa parameter */
+bool pengecekan(){
+    for (int i = 0; i < 3; i++){
+    if ((isi_papan[i][0] == isi_papan[i][1] && isi_papan[i][0] == isi_papan[i][2]) || (isi_papan[0][i] == isi_papan[1][i] && isi_papan[0][i] == isi_papan[2][i]))
+    {
+        return true;
+    } 
+    } if ((isi_papan[0][0] == isi_papan[1][1] && isi_papan[0][0] == isi_papan[2][2]) || (isi_papan[0][2] == isi_papan[1][1] && isi_papan[0][2] == isi_papan[2][0]))
+    {
+        return true;
+    }
+    return false;
+}
+
 int main()
 {
-    cout << endl;
+
     return 0;
 }
